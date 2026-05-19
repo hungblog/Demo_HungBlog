@@ -1,95 +1,84 @@
-<!DOCTYPE html> 
-<html  lang= "en" > 
-<head> 
-    <meta  charset= "UTF-8" > 
-    <meta  name= "viewport"  content= "width=device-width, initial-scale=1.0" > 
-    <meta  http-equiv= "X-UA-Compatible"  content= "ie=edge" > 
-    <title> Đang gõ </title> 
-    <link  rel= "stylesheet"  href= "accoridon.css" > 
-    <script src= "https://code.jquery.com/jquery-3.2.1.js" ></script> 
-    <script> 
-        $( document ).ready( function (){
-            $( '.cardNavbar ul li:nth-child(1)' ).on( 'mouseover' , function (){
-                $( '.cardContainer .cardSingle' ).removeClass( 'active' );
-                $( '.cardContainer .cardSingle:nth-child(1)' ).addClass( 'active' );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('.cardNavbar ul li:nth-child(1)').on('mouseover',function(){
+                $('.cardContainer .cardSingle').removeClass('active');
+                $('.cardContainer .cardSingle:nth-child(1)').addClass('active');
             })
 
-            $( '.cardNavbar ul li:nth-child(2)' ).on( 'mouseover' , function (){
-                $( '.cardContainer .cardSingle' ).removeClass( 'active' );
-                $( '.cardContainer .cardSingle:nth-child(2)' ).addClass( 'active' );
+            $('.cardNavbar ul li:nth-child(2)').on('mouseover',function(){
+                $('.cardContainer .cardSingle').removeClass('active');
+                $('.cardContainer .cardSingle:nth-child(2)').addClass('active');
             })
 
-            $( '.cardNavbar ul li:nth-child(3)' ).on( 'mouseover' , function (){
-                $( '.cardContainer .cardSingle' ).removeClass( 'active' );
-                $( '.cardContainer .cardSingle:nth-child(3)' ).addClass( 'active' );
+            $('.cardNavbar ul li:nth-child(3)').on('mouseover',function(){
+                $('.cardContainer .cardSingle').removeClass('active');
+                $('.cardContainer .cardSingle:nth-child(3)').addClass('active');
             })
 
-            $( '.cardNavbar ul li:nth-child(4)' ).on( 'mouseover' , function (){
-                $( '.cardContainer .cardSingle' ).removeClass( 'active' );
-                $( '.cardContainer .cardSingle:nth-child(4)' ).addClass( 'active' );
+            $('.cardNavbar ul li:nth-child(4)').on('mouseover',function(){
+                $('.cardContainer .cardSingle').removeClass('active');
+                $('.cardContainer .cardSingle:nth-child(4)').addClass('active');
             })
         })
-    </script> 
+    </script>
 </head>
 
-<body> 
-    <div  class= "cardSlider" > 
-        <div  class= "cardContainer" > 
-            <div  class= "cardSingle" > 
-                <article> 
-                    <h1> Thẻ 1 </h1> 
+<body>
+    <div class="cardSlider">
+        <div class="cardContainer">
+            <div class="cardSingle">
+                <article>
+                    <h1>Card 1</h1>
                     <p>
-                        Lorem Ipsum chỉ là văn bản giả định đơn thuần của ngành in ấn và sắp chữ.
-                        Lorem Ipsum đã trở thành văn bản giả chuẩn của ngành công nghiệp kể từ những năm 1500.
-                        Khi một người thợ in không rõ danh tính lấy một bản in thử và xáo trộn các chữ cái để tạo ra một kiểu chữ.
-                        Sách mẫu.
-                    </p> 
-                </article> 
+                        HÙNG BLOG VIỆT NAM
+                    </p>
+                </article>
             </div>
 
-            <div  class= "cardSingle" > 
-                <article> 
-                    <h1> Thẻ 2 </h1> 
+            <div class="cardSingle">
+                <article>
+                    <h1>Card 2</h1>
                     <p>
-                        Lorem Ipsum chỉ là văn bản giả định đơn thuần của ngành in ấn và sắp chữ.
-                        Lorem Ipsum đã trở thành văn bản giả chuẩn của ngành công nghiệp kể từ những năm 1500.
-                        Khi một người thợ in không rõ danh tính lấy một bản in thử và xáo trộn các chữ cái để tạo ra một kiểu chữ.
-                        Sách mẫu.
-                    </p> 
-                </article> 
+                        HUNGBLOG.COM
+                    </p>
+                </article>
             </div>
 
-            <div  class= "cardSingle" > 
-                <article> 
-                    <h1> Thẻ 3 </h1> 
+            <div class="cardSingle">
+                <article>
+                    <h1>Card 3</h1>
                     <p>
-                        Lorem Ipsum chỉ là văn bản giả định đơn thuần của ngành in ấn và sắp chữ.
-                        Lorem Ipsum đã trở thành văn bản giả chuẩn của ngành công nghiệp kể từ những năm 1500.
-                        Khi một người thợ in không rõ danh tính lấy một bản in thử và xáo trộn các chữ cái để tạo ra một kiểu chữ.
-                        Sách mẫu.
-                    </p> 
-                </article> 
+                        HUNG BLOG VIET NAM
+                    </p>
+                </article>
             </div>
 
-            <div  class= "cardSingle" > 
-                <article> 
-                    <h1> Thẻ 4 </h1> 
+            <div class="cardSingle">
+                <article>
+                    <h1>Card 4</h1>
                     <p>
-                        Lorem Ipsum chỉ là văn bản giả định đơn thuần của ngành in ấn và sắp chữ.
-                        Lorem Ipsum đã trở thành văn bản giả chuẩn của ngành công nghiệp kể từ những năm 1500.
-                        Khi một người thợ in không rõ danh tính lấy một bản in thử và xáo trộn các chữ cái để tạo ra một kiểu chữ.
-                        Sách mẫu.
-                    </p> 
-                </article> 
-            </div> 
-        </div> 
-        <div  class= "cardNavbar" > 
-            <ul> 
-                <li> Thẻ Một </li><li>
-                 Thẻ Hai </li> <li> Thẻ
-                 Ba </li> <li>
-                 Thẻ Bốn </li> </ul> 
-            </div> 
-        </div> 
-    </body> 
+                        HUNG PRO BLOG
+                    </p>
+                </article>
+            </div>
+        </div>
+        <div class="cardNavbar">
+            <ul>
+                <li>Card One</li>
+                <li>Card Two</li>
+                <li>Card Three</li>
+                <li>Card Four</li>
+            </ul>
+        </div>
+    </div>
+</body>
 </html>
