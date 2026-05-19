@@ -70,22 +70,22 @@ article{
 }
 
 .cardContainer .cardSingle:nth-child(1){
-    background: url(img1.jpg);
+    background: url(anh-dep.jpg);
     background-size: cover;
 }
 
 .cardContainer .cardSingle:nth-child(2){
-    background: url(img2.jpeg);
+    background: url(anh-dep.jpg);
     background-size: cover;
 }
 
 .cardContainer .cardSingle:nth-child(3){
-    background: url(img3.jpeg);
+    background: url(anh-dep.jpg);
     background-size: cover;
 }
 
 .cardContainer .cardSingle:nth-child(4){
-    background: url(img4.jpeg);
+    background: url(anh-dep.jpg);
     background-size: cover;
 }
 
