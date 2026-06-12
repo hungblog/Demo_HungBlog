@@ -1,0 +1,260 @@
+<title>Demo News HTML HungBlog.Com</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<div id="atn-mag"
+     class="atn-mag"
+     data-label="News"    
+     data-page-size="22">
+  <div class="atn-mag-search">
+    <input type="search" id="atn-mag-search" placeholder="🔍 Tìm kiếm bài viết..." aria-label="Tìm kiếm bài viết">
+  </div>
+  <div id="atn-mag-grid" class="atn-mag-grid" aria-live="polite"></div>
+  <div class="atn-mag-actions">
+    <button id="atn-mag-load" type="button" class="atn-mag-btn">Tải thêm</button>
+  </div>
+  <div id="atn-mag-empty" class="atn-mag-empty" hidden>Không có bài viết nào phù hợp.</div>
+</div>
+
+<style>
+.atn-mag {
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px;
+  font-family:'Source Sans Pro',system-ui,sans-serif;
+}
+.atn-mag-title {
+  margin:0 0 14px;
+  color:#0f172a;
+  font:900 28px/1.25 'Merriweather',serif;
+}
+.atn-mag-search {margin-bottom:20px}
+#atn-mag-search {
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  background:#fff;
+  color:#0f172a;
+  font:500 14px/1.4 'Source Sans Pro',sans-serif;
+  outline:none;
+  transition:box-shadow .15s ease,border-color .15s ease;
+}
+#atn-mag-search:focus {
+  border-color:#2563eb;
+  box-shadow:0 0 0 4px rgba(37,99,235,.12);
+}
+.atn-mag-actions {
+  display:flex;
+  justify-content:center;
+  margin:18px 0 8px;
+}
+.atn-mag-btn {
+  padding:10px 16px;
+  border-radius:12px;
+  border:1px solid #dbe3ea;
+  background:#0ea5e9;
+  color:#fff;
+  font:700 13px/1 'Source Sans Pro',sans-serif;
+  cursor:pointer;
+  transition:transform .1s ease,filter .15s ease;
+}
+.atn-mag-btn:active {transform:translateY(1px)}
+.atn-mag-btn[disabled]{opacity:.55;cursor:not-allowed}
+.atn-mag-grid {
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+}
+.atn-card {
+  grid-column:span 4;
+  display:flex;
+  flex-direction:column;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(2,6,23,.06);
+  transition:transform .15s ease;
+}
+.atn-card:hover {transform:translateY(-2px)}
+.atn-thumb {
+  width:100%;
+  aspect-ratio:16/9;
+  background:#f1f5f9;
+  overflow:hidden;
+  display:flex;    
+  align-items:center;
+  justify-content:center;
+}
+.atn-thumb img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  line-height:0;
+  vertical-align:middle;
+  margin:0;
+  padding:0;
+  transition:transform .35s ease, filter .35s ease;
+}
+.atn-thumb:hover img {
+  transform:scale(1.05);
+  filter:brightness(1.05) contrast(1.05);
+}
+.atn-body {
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.atn-meta {
+  margin-bottom:8px;
+  color:#64748b;
+  font:500 12px/1.2 'Source Sans Pro',sans-serif;
+}
+.atn-title {margin:0 0 10px}
+.atn-title a {
+  color:#0f172a;
+  text-decoration:none;
+  font:800 19px/1.4 'Merriweather',serif;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.atn-title a:hover {
+  color:#2563eb;
+  text-decoration:none!important;
+}
+.atn-excerpt {
+  color:#334155;
+  font:500 14px/1.6 'Source Sans Pro',sans-serif;
+  margin:0;
+  flex-grow:1;
+}
+.atn-read {
+  margin-top:12px;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  color:#0ea5e9;
+  font:700 13px/1 'Source Sans Pro',sans-serif;
+  text-decoration:none;
+}
+.atn-read svg {
+  width:16px;
+  height:16px;
+  stroke:currentColor;
+  fill:none;
+}
+.atn-card.is-featured {
+  grid-column:span 12;
+  display:grid;
+  grid-template-columns:6fr 6fr;
+  gap:20px;
+  align-items:stretch;
+  border-radius:16px;
+}
+.atn-card.is-featured .atn-thumb {
+  aspect-ratio:auto;
+  height:100%;
+}
+.atn-card.is-featured .atn-body {
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.atn-card.is-featured .atn-title a {
+  font-size:24px;
+  line-height:1.3;
+  -webkit-line-clamp:3;
+}
+.atn-card.is-featured .atn-excerpt {
+  font-size:15px;
+  -webkit-line-clamp:4;
+}
+@media (max-width:1024px){
+  .atn-card{grid-column:span 6}
+  .atn-card.is-featured{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .atn-mag{padding:14px}
+  .atn-card{grid-column:span 12}
+  .atn-title a{font-size:18px}
+  .atn-excerpt{font-size:13.5px}
+}
+@media (max-width:420px){
+  .atn-mag{padding:10px}
+  .atn-title a{font-size:17px}
+  .atn-excerpt{display:none}
+}
+.atn-mag-empty {
+  padding:14px;
+  border:1px dashed #e2e8f0;
+  border-radius:12px;
+  background:#fafafa;
+  color:#64748b;
+  text-align:center;
+}
+</style>
+
+<script>
+(function(){
+  var ROOT=document.getElementById("atn-mag");
+  if(!ROOT) return;
+  var label=ROOT.getAttribute("data-label")||"";
+  var pageSize=parseInt(ROOT.getAttribute("data-page-size")||"13",10);
+  var grid=document.getElementById("atn-mag-grid");
+  var btn=document.getElementById("atn-mag-load");
+  var emptyEl=document.getElementById("atn-mag-empty");
+  var search=document.getElementById("atn-mag-search");
+  var start=0, total=0, cache=[];
+  function buildCard(post,i){
+    var thumb=post.media$thumbnail?post.media$thumbnail.url.replace(/\/s\d+\-c/,"/s600"): "https://via.placeholder.com/600x400?text=Blogger";
+    var date=new Date(post.published.$t);
+    var title=post.title.$t||"Không tiêu đề";
+    var link=(post.link.find(l=>l.rel==="alternate")||{}).href||"#";
+    var summary=(post.summary?post.summary.$t.replace(/<[^>]+>/g,""):"").replace(/&#8230;/g,"...").substring(0,160)+"...";
+    var html='<article class="atn-card'+(i===0?" is-featured":"")+'">'+
+      '<div class="atn-thumb"><a href="'+link+'" title="'+title+'"><img src="'+thumb+'" alt="'+title+'"/></a></div>'+
+      '<div class="atn-body">'+
+      '<div class="atn-meta"><span class="atn-date">'+date.toLocaleDateString("vi-VN")+'</span></div>'+
+      '<h2 class="atn-title"><a href="'+link+'">'+title+'</a></h2>'+
+      '<p class="atn-excerpt">'+summary+'</p>'+
+      '<a class="atn-read" href="'+link+'">Đọc tiếp <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'+
+      '</div></article>';
+    return html;
+  }
+  function render(){
+    grid.innerHTML="";
+    if(cache.length===0){ emptyEl.hidden=false; return; }
+    emptyEl.hidden=true;
+    cache.forEach(function(p,i){ grid.insertAdjacentHTML("beforeend",buildCard(p,i)); });
+  }
+  function fetchPosts(cb){
+    var url="/feeds/posts/summary/-/"+encodeURIComponent(label)+"?alt=json&max-results="+pageSize+"&start-index="+(start+1);
+    fetch(url).then(r=>r.json()).then(function(json){
+      total=json.feed.openSearch$totalResults.$t;
+      var posts=json.feed.entry||[];
+      cache=cache.concat(posts);
+      start+=posts.length;
+      render();
+      if(start>=total){ btn.disabled=true; btn.textContent="Hết bài"; }
+    }).catch(function(){ btn.disabled=true; });
+  }
+  btn.addEventListener("click",function(){ fetchPosts(); });
+  search.addEventListener("input",function(){
+    var q=this.value.toLowerCase();
+    var cards=grid.querySelectorAll(".atn-card");
+    var found=0;
+    cards.forEach(function(c){
+      var t=c.querySelector(".atn-title a").textContent.toLowerCase();
+      if(t.indexOf(q)>-1){ c.style.display=""; found++; }
+      else c.style.display="none";
+    });
+    emptyEl.hidden=found!==0;
+  });
+  fetchPosts();
+})();
+</script>
+
