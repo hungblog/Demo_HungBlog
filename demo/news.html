@@ -232,7 +232,7 @@
     cache.forEach(function(p,i){ grid.insertAdjacentHTML("beforeend",buildCard(p,i)); });
   }
   function fetchPosts(cb){
-    var url="https://www.hungblog.com/feeds/posts/summary/-/"+encodeURIComponent(label)+"?alt=json&max-results="+pageSize+"&start-index="+(start+1);
+    var url="https://www.hungblog.com/feeds/posts/default?alt=rss"&max-results="+pageSize+"&start-index="+(start+1);
     fetch(url).then(r=>r.json()).then(function(json){
       total=json.feed.openSearch$totalResults.$t;
       var posts=json.feed.entry||[];
